@@ -8,8 +8,8 @@ filter('chunk', function() {
 		for (var i=0; i<array.length; i++) {
 			currentChunk.push(array[i]);
 			if (currentChunk.length == chunkSize) {
-			  result.push(currentChunk);
-			  currentChunk = [];
+				result.push(currentChunk);
+				currentChunk = [];
 			}
 		}
 		if (currentChunk.length > 0) {
@@ -27,7 +27,7 @@ filter('chunk', function() {
 	return function(array, chunkSize) {
 		if (!(array instanceof Array)) return array;
 		if (!chunkSize) return array;
-		
+
 		var result = chunkArray(array, chunkSize);
 		defineTrackingKeys(result);
 		return result;
