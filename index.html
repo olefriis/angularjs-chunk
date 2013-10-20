@@ -1,0 +1,14 @@
+<html ng-app="chunk-example">
+<head>
+	<script src="angular.js"></script>
+	<script src="app.js"></script>
+</head>
+<body ng-controller="chunkCtrl">
+	<div ng-repeat="valueChunk in values | chunk:3 track by valueChunk.trackingKey">
+		New chunk
+		<div ng-repeat="value in valueChunk">
+			Value: {{value}}
+		</div>
+	</div>
+</body>
+</html>
